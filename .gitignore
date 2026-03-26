@@ -28,4 +28,7 @@ coverage/
 
 # Optional: IDE/editor files
 .vscode/
-.idea/
+.idea/++
+
+.postman/
+postman/
