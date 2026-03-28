@@ -3,12 +3,12 @@ const mongoose = require("mongoose");
 const userSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: true
+    required: true  //required: true = must be filled
   },
   email: {
     type: String,
     required: true,
-    unique: true
+    unique: true //No Duplicates
   },
   password: {
     type: String,
@@ -16,11 +16,11 @@ const userSchema = new mongoose.Schema({
   },
   role: {
     type: String,
-    enum: ["user", "admin"],
+    enum: ["user", "admin"], //Only can two of them.
     default: "user"
   },
   phone_number: String,
   location: String
-}, { timestamps: true });
+}, { timestamps: true }); // Auto adds Created at and Added at.
 
 module.exports = mongoose.model("User", userSchema);

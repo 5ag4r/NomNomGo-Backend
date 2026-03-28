@@ -5,13 +5,13 @@ const foodSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  price: {
+  price: { // Number for calculation.
     type: Number,
     required: true
   },
   category: String,
-  image: String,
-  availability: {
+  image: String, // Stores url.
+  availability: { // Available or not
     type: Boolean,
     default: true
   },
