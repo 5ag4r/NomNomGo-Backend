@@ -1,12 +1,20 @@
 const express = require("express");
 const router = express.Router();
 
-const { registerUser, loginUser } = require("../controllers/userController");
+const {
+  registerUser,
+  loginUser,
+  logoutUser,
+  checkAuth,
+} = require("../controllers/userController");
 
-// Register
+const verifyToken = require("../middleware/authMiddleware");
+
 router.post("/register", registerUser);
-
-// Login
 router.post("/login", loginUser);
+router.post("/logout", logoutUser);
+
+// 🔒 PROTECTED ROUTE
+router.get("/check", verifyToken, checkAuth);
 
 module.exports = router;
