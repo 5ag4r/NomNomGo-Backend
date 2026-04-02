@@ -11,12 +11,12 @@ exports.registerUser = async (req, res) => {
       email,
       password,
       confirmPassword,
-      phone_number,
+      phone,
       location,
     } = req.body;
 
     // Validation
-    if (!name || !email || !password || !confirmPassword) {
+    if (!name?.trim() || !email?.trim() ||!phone?.trim() || !password?.trim() || !confirmPassword?.trim()) {
       return res.status(400).json({ message: "All required fields must be filled" });
     }
 
@@ -38,7 +38,7 @@ exports.registerUser = async (req, res) => {
       name,
       email,
       password: hashedPassword,
-      phone_number,
+      phone,
       location,
     });
 

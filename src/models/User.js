@@ -19,7 +19,10 @@ const userSchema = new mongoose.Schema({
     enum: ["user", "admin"], //Only can two of them.
     default: "user"
   },
-  phone_number: String,
+  phone: {
+    type: String,
+    required: true
+  },
   location: String
 }, { timestamps: true }); // Auto adds Created at and Added at.
 
