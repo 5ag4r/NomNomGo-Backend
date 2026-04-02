@@ -17,6 +17,8 @@ app.use(
 
 // Routes
 const userRoutes = require("./routes/userRoutes");
+const foodRoutes = require("./routes/foodRoutes");
 app.use("/api/users", userRoutes);
+app.use("/api/foods", foodRoutes);
 
 module.exports = app;
